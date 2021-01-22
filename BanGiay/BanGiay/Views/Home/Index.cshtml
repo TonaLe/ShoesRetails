@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DAO.Model.ShoeModel>
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <h3 class="display-4">All Shoes</h3>
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">@Html.DisplayFor(modelItem => item.ShoeName)</h3>
+                            <p>Description: @Html.DisplayFor(modelItem => item.ShoeDesc)</p>
+                            <p>Size: @Html.DisplayFor(modelItem => item.ShoeSize)</p>
+                            <p>Date Created: @Html.DisplayFor(modelItem => item.CreateDate)</p>
+                            <p>Status: @Html.DisplayFor(modelItem => item.Status)</p>
+                            <img src="~/images/shoes.jpg" width="300" height="300"/>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+

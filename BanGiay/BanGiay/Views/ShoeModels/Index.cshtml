@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DAO.Model.ShoeModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoeSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoeCateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoeDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdadeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdateDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShoeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShoeSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShoeCateId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShoeDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdadeId)
+            </td>s
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ShoesId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ShoesId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ShoesId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
